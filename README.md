@@ -8,7 +8,7 @@ Optimization Insights is Azure's AI-based service that helps you identify and re
 
 The following are the eligibility requirements to participate in the Optimization Insights private preview. 
 1.	The application is written in .NET
-2.	The application uses Application Insights
+2.	The application uses Application Insights.
 3.	The Application Insights Profiler is enabled.
 
 ## Interested in participating?
