@@ -1,28 +1,58 @@
-# Project
+**MICROSOFT CONFIDENTIAL: All content in this repo is under NDA unless otherwise stated.**
 
-> This repo has been populated by an initial template to help get you started. Please
-> make sure to update the content to build a great experience for community-building.
+# Optimization Insights Service (Private Preview)
 
-As the maintainer of this project, please make a few updates:
+Optimization Insights is Azure's AI-based service that helps you identify and remove CPU and Memory bottlenecks by analyzing the runtime behavior of your application and comparing it to performance engineering best practices based on lessons learned from thousands of applications profiled internally at Microsoft. 
 
-- Improving this README.MD file to provide a great experience
-- Updating SUPPORT.MD with content about this project's support experience
-- Understanding the security reporting process in SECURITY.MD
-- Remove this section from the README
+## Prerequisites
 
-## Contributing
+The following are the eligibility requirements to participate in the Optimization Insights private preview. 
+1.	The application is written in .NET
+2.	The application uses Application Insights
+3.	The Application Insights Profiler is enabled.
 
-This project welcomes contributions and suggestions.  Most contributions require you to agree to a
-Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
-the rights to use your contribution. For details, visit https://cla.opensource.microsoft.com.
+## Interested in participating?
 
-When you submit a pull request, a CLA bot will automatically determine whether you need to provide
-a CLA and decorate the PR appropriately (e.g., status check, comment). Simply follow the instructions
-provided by the bot. You will only need to do this once across all repos using our CLA.
+If you already meet or could meet the aforementioned criteria, please fill out this [survey](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR2WKm-0-TPBEtsyQ96QsOPpUMlRKVU5JSkJVRTVKOFJaQTI2N1ZRTkc4Si4u). After completing the [survey](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR2WKm-0-TPBEtsyQ96QsOPpUMlRKVU5JSkJVRTVKOFJaQTI2N1ZRTkc4Si4u), we will contact you within a few days! 
 
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
-For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
-contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+## Frequently Asked Questions
+
+#### 1. Is it required to have the Application Insights Profiler enabled in order to see the Optimization Insights?
+
+Yes, the profiling data collected by the App Insights Profiler is used as an input to generate the Optimization Insights.
+
+#### 2. How do Optimization Insights work under the hood?
+
+Optimization Insights use Microsoft’s internal profiling data and Artificial Intelligence algorithms to detect performance bugs. Microsoft’s internal profiler collects random samples of stack traces from applications running on Azure, which amount to thousands of traces collected daily. We then leverage this data to build detection techniques that can 1) distinguish between what is and isn’t client’s application code in a trace, and 2) tell when a function is being used inefficiently by learning best practices from thousands of .NET application traces internal to Microsoft that are currently in production.
+
+#### 3. What is the App Insights Profiler’s overhead? Does enabling Optimization Insights result in additional overhead?
+
+See App Insights Profiler [documentation](https://docs.microsoft.com/en-us/azure/azure-monitor/app/profiler-overview) to learn more about the Profiler overhead. There's no extra overhead for enabling Optimization Insights because Optimization Insights works entirely offline using the profiles uploaded by the App Insights Profiler.
+
+#### 4.	How often is the data collected? Is the data collection different from that of the App Insights Profiler? How do the trigger-based and on-demand data collection options affect Optimization Insights?
+
+Optimization Insights use the data uploaded by the App Insights Profiler. This includes triggered collection and time-based samples. By default it's about 1 an hour. However, we look at only 1 trace per role name per hour.
+
+#### 5.	How often should I review the Optimization Insights?
+
+We recommend that you review the insights on a regular basis since the new performance issues can be detected based on the application load and how the application is exercised by the users. Many users review what Optimization Insights are being generated when they run their load tests
+
+#### 6.	How do I go about prioritizing a particular recommendation provided by Optimization Insights relative to other recommendations as well as other tasks that developers need to work on?
+
+We recommend that you prioritize issue remediation based on the values shown in the Count and Impact columns. 
+
+#### 7.	Will I incur any additional costs for testing Optimization Insights in the public preview?
+
+Optimization Insights are included at no additional costs for App Insights Profiler customers. However, although minor, there are indirect costs associated with running the App Insights Profiler. First, the Profiler’s metadata is sent to your App Insights resource, which Application Insights charges for. In the basic pricing plan, your application can send a certain allowance of data each month free of charge. Second, the Profiler uploads profiles to the same region where your Application Insights was created. Therefore, if your application is running in a different region than that of your App Insights resource, we have to send profiler data across different regions. As a result, although very small, you will incur networking costs. 
+
+#### 8. Will Optimization Insights continue to be free once it becomes generally available?
+We will provide more information on this topic once the product becomes generally available.
+
+#### 9. What does the roadmap for Optimization Insights look like?
+The roadmap for Optimization Insights is not currently public. However, we are continuously working on making the product better and would love to hear your feedback! If you have any suggestions or questions, please send us an email at jogrima@microsoft.com.
+
+#### 10. How long does it take for PerfLens Insights to be shown in the UI after the profiler data is collected? 
+The Optimization Insights are shown in near real time as the profiler data is ingested and analyzed.
 
 ## Trademarks
 
