@@ -51,7 +51,7 @@ Optimization Insights are included at no additional costs for App Insights Profi
 We will provide more information on this topic once the product becomes generally available.
 
 #### 9. What does the roadmap for Optimization Insights look like?
-The roadmap for Optimization Insights is not currently public. However, we are continuously working on making the product better and would love to hear your feedback! If you have any suggestions or questions, please send us an email at **jogrima@microsoft.com**.
+The roadmap for Optimization Insights is not currently public. However, we are continuously working on making the product better and would love to hear your feedback! If you have any suggestions or questions, please send us an email at **opt_insights@microsoft.com**.
 
 #### 10. How long does it take for the Optimization Insights to appear in the UI after the profiler data is collected? 
 The Optimization Insights are shown in near real time as the profiler data is ingested and analyzed.
