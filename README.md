@@ -37,7 +37,7 @@ Optimization Insights use the data uploaded by the App Insights Profiler. This i
 
 #### 5.	How often should I review the Optimization Insights?
 
-We recommend that you review the insights on a regular basis since the new performance issues can be detected based on the application load and how the application is exercised by the users. Many users review what Optimization Insights are being generated when they run their load tests
+We recommend that you review the insights on a regular basis since the new performance issues can be detected based on the application load and how the application is exercised by the users. Many users check which Optimization Insights are generated when they run their load tests.
 
 #### 6.	How do I go about prioritizing a particular recommendation provided by Optimization Insights relative to other recommendations as well as other tasks that developers need to work on?
 
