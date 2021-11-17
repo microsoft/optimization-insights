@@ -4,7 +4,7 @@
 
 Optimization Insights is Azure's AI-based service that helps you identify and remove CPU and Memory bottlenecks by analyzing the runtime behavior of your application and comparing it to performance engineering best practices based on lessons learned from thousands of applications profiled internally at Microsoft. 
 
-[![Survey](extras/readme-images/surveybutton.jpg)](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR2WKm-0-TPBEtsyQ96QsOPpUMlRKVU5JSkJVRTVKOFJaQTI2N1ZRTkc4Si4u)
+[![Survey](extras/readme-images/signupbutton.jpg)](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR2WKm-0-TPBEtsyQ96QsOPpUMlRKVU5JSkJVRTVKOFJaQTI2N1ZRTkc4Si4u)
 
 ## Prerequisites
 
@@ -15,7 +15,7 @@ The following are the eligibility requirements to participate in the Optimizatio
 
 ## Interested in participating?
 
-If you already meet or could meet the aforementioned criteria, please fill out this **[survey](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR2WKm-0-TPBEtsyQ96QsOPpUMlRKVU5JSkJVRTVKOFJaQTI2N1ZRTkc4Si4u)**. After completing the **[survey](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR2WKm-0-TPBEtsyQ96QsOPpUMlRKVU5JSkJVRTVKOFJaQTI2N1ZRTkc4Si4u)**, we will contact you within a few days! 
+If you already meet or could meet the aforementioned criteria, please **[sign up](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR2WKm-0-TPBEtsyQ96QsOPpUMlRKVU5JSkJVRTVKOFJaQTI2N1ZRTkc4Si4u)**. After completing the **[sign up](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR2WKm-0-TPBEtsyQ96QsOPpUMlRKVU5JSkJVRTVKOFJaQTI2N1ZRTkc4Si4u)**, we will contact you within a few days! 
 
 ## Frequently Asked Questions
 
