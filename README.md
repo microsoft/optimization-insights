@@ -48,7 +48,7 @@ We recommend that you prioritize issue remediation based on the values shown in 
 Optimization Insights are included at no additional costs for App Insights Profiler customers. However, although minor, there are indirect costs associated with running the App Insights Profiler. First, the Profiler’s metadata is sent to your App Insights resource, which Application Insights charges for. In the basic pricing plan, your application can send a certain allowance of data each month free of charge. Second, the Profiler uploads profiles to the same region where your Application Insights was created. Therefore, if your application is running in a different region than that of your App Insights resource, we have to send profiler data across different regions. As a result, although very small, you will incur networking costs. 
 
 #### 8. Will Optimization Insights continue to be free once it becomes generally available?
-We will provide more information on this topic once the product becomes generally available.
+We will provide more information on this topic once the product becomes generally available in 2022.
 
 #### 9. What does the roadmap for Optimization Insights look like?
 The roadmap for Optimization Insights is not currently public. However, we are continuously working on making the product better and would love to hear your feedback! If you have any suggestions or questions, please send us an email at **opt_insights@microsoft.com**.
