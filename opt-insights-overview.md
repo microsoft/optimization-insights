@@ -8,12 +8,12 @@ Performance bugs are consistently difficult to detect in today’s online servic
 - Can be introduced by anyone, even experts.
 - Propagate easily by code reuse.  
 
-To detect performance bugs and provide insights in your application, Optimization Insights relies on an AI-model. This AI-based service identifies and removes CPU and memory bottlenecks by:
+To detect performance bugs and provide insights in your application, Optimization Insights relies on an AI model. This AI-based service identifies and removes CPU and memory bottlenecks by:
 
 - Analyzing the runtime behavior of your application.
 - Comparing the behavior analysis to performance engineering best practices.
 
-Optimization Insights bases its analysis and comparison on lessons learned from thousands of applications profiled internally at Microsoft.
+Optimization Insights service is built entirely using Azure. Behind the scenes, our system's smart-sampling agent grabs samples from the profiles captured on your app every *X* minutes. These samples are then sent to the AI model to extract the most relevant insights and recommendations.  
 
 ## Pre-requisites
 
@@ -21,7 +21,7 @@ Before you can use Optimization Insights on your Azure resource, [enable the App
 
 ## Navigate to Optimization Insights
 
-If you are using Application Insights Profiler to monitor your Azure resources' performance health, you may have noticed the new **Optimization Insights (preview)** tab from your resource's profiler page. Navigate to that tab to view the insights we've identified in your application over the last 24 hours.
+Once you've been onboarded to the private preview, you'll notice the new **Optimization Insights (preview)** tab from your resource's profiler page. Navigate to that tab to view the insights we've identified in your application over the last 24 hours.
 
 From your Azure Application Insights resource overview page, select **Optimization Insights (preview)** under **Investigate** in the left navigation pane.
 
@@ -38,7 +38,7 @@ You can sort the insights based on:
 Select each insight to view:
 
 - Detailed description of the performance bug insight.
-- Recommendations on fixing the performance issue.
+- Recommendations on how to fix the performance issue.
 
 ![Screenshot showing the description and recommendations associated with one of the insights](./extras/overview-images/opt-insights-2.png)
 
