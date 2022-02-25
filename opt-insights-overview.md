@@ -66,5 +66,5 @@ Optimization Insights draws from Application Insights, requiring you to have you
 
 ## Next Steps
 
-- For more information, review our [FAQ page](faq.md).
+- For more information, review our [FAQ page](README.md#frequently-asked-questions).
 - If you have any further questions, email the [Optimization Insights team](mailto:opt_insights@microsoft.com).
