@@ -24,13 +24,15 @@ Once you've been onboarded to the private preview, you'll notice the new **Optim
 
 ### Navigate to Optimization Insights for your application
 
-We provide two entry points to Optimization Insights from your Azure Application Insights resource overview page.
+Currently, you can only access Optimization Insights through one of the following entry points. From the resource's overview page:
 
 - Select **Optimization Insights (preview)** under **Investigate** in the left navigation pane.
 
    ![Screenshot of Optimization Insights located in the left side navigation pane](./extras/overview-images/nav-pane.png)
 
-<!-- Add next entry point -->
+- Navigate to the **Performance** blade from the left navigation pane and select **Optimization Insights (preview)** from the top menu.
+
+   ![Screenshot of Optimization Insights located in the Performance blade](./extras/overview-images/opt-insights-2nd-entry.png)
 
 On the Optimization Insights page, you can filter the results by:
 
