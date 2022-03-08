@@ -2,64 +2,73 @@
 
 # Optimization Insights Service (Private Preview)
 
-Optimization Insights is Azure's AI-based service that helps you identify and remove CPU and Memory bottlenecks by analyzing the runtime behavior of your application and comparing it to performance engineering best practices based on lessons learned from thousands of applications profiled internally at Microsoft. 
+Azure's AI-based service, Optimization Insights, helps you identify and remove CPU and Memory bottlenecks by:
 
-[![Survey](extras/readme-images/signupbutton.jpg)](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR2WKm-0-TPBEtsyQ96QsOPpUMlRKVU5JSkJVRTVKOFJaQTI2N1ZRTkc4Si4u)
+- Analyzing the runtime behavior of your application.
+- Comparing the behavior to performance engineering best practices, based on lessons learned from thousands of applications profiled internally at Microsoft.
+
+Optimization Insights service is built entirely using Azure. Behind the scenes, our system's smart-sampling agent grabs samples from the profiles captured on your app every *X* minutes. These samples are then sent to the AI model to extract the most relevant insights and recommendations.
+
+[![Survey](extras/readme-images/signupbutton.jpg)](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR2WKm-0-TPBEtsyQ96QsOPpUMlRKVU5JSkJVRTVKOFJaQTI2N1ZRTkc4Si4u)  
 
 ## Prerequisites
 
-The following are the eligibility requirements to participate in the Optimization Insights private preview. 
-1.	The application is written in .NET
-2.	The application uses Application Insights.
-3.	The Application Insights Profiler is enabled.
+Before you can use Optimization Insights on your Azure application:
 
-## Interested in participating?
+- [Enable the Application Insights Profiler](https://docs.microsoft.com/en-us/azure/azure-monitor/app/profiler-overview).
+- Verify your application:
+  - Is written in .NET.
+  - Uses [Application Insights](https://docs.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview).
 
-If you already meet or could meet the aforementioned criteria, please **[sign up](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR2WKm-0-TPBEtsyQ96QsOPpUMlRKVU5JSkJVRTVKOFJaQTI2N1ZRTkc4Si4u)**. After completing the **[sign up process](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR2WKm-0-TPBEtsyQ96QsOPpUMlRKVU5JSkJVRTVKOFJaQTI2N1ZRTkc4Si4u)**, we will contact you within a few days! 
+## Get started with Optimization Insights
 
-## Frequently Asked Questions
+Once you've been onboarded to the private preview, you'll notice the new **Optimization Insights (preview)** tab from your resource's profiler page. Navigate to that tab to view the insights we've identified in your application over a specific period of time.
 
-#### 1. Is it required to have the Application Insights Profiler enabled in order to see the Optimization Insights?
+### Navigate to Optimization Insights for your application
 
-Yes, the profiling data collected by the App Insights Profiler is used as an input to generate the Optimization Insights. If you haven't tried the App Insights Profiler yet, we encourage you to do so since it can help you diagnose performance issues in your application. Click **[here](https://docs.microsoft.com/en-us/azure/azure-monitor/app/profiler-overview)** for more details on how to enable it.
+Currently, you can only access Optimization Insights through one of the following entry points. From the resource's overview page:
 
-#### 2. How do Optimization Insights work under the hood?
+- Select **Optimization Insights (preview)** under **Investigate** in the left navigation pane.
 
-Optimization Insights use Microsoft’s internal profiling data and Artificial Intelligence algorithms to detect performance bugs. Microsoft’s internal profiler collects random samples of stack traces from Microsoft's own services and applications running on Azure, which amount to thousands of traces collected daily. We then leverage this data to build detection techniques that can a) distinguish between what is and isn’t client’s application code in a trace, and b) tell when a function is being used inefficiently by learning best practices from thousands of .NET application traces internal to Microsoft that are currently in production.
+   ![Screenshot of Optimization Insights located in the left side navigation pane](./extras/overview-images/nav-pane.png)
 
-#### 3. Does enabling Optimization Insights result in additional overhead?
+- Navigate to the **Performance** blade from the left navigation pane and select **Optimization Insights (preview)** from the top menu.
 
-There's no extra overhead because Optimization Insights work entirely offline using the profiles uploaded by the App Insights Profiler.
+   ![Screenshot of Optimization Insights located in the Performance blade](./extras/overview-images/opt-insights-2nd-entry.png)
 
-#### 4.	How often is the data collected? Is the data collection different from that of the App Insights Profiler? How do the trigger-based and on-demand data collection options affect Optimization Insights?
+On the Optimization Insights page, you can filter the results by:
 
-Optimization Insights use the data uploaded by the App Insights Profiler. This includes triggered collection and time-based samples. By default it's about 1 an hour. However, we look at only 1 trace per role name per hour.
+- Using the search bar to filter by field.
+- Setting the time range via the **Time Range** drop-down menu.
+- Selecting the corresponding role from the **Role** drop-down menu.
 
-#### 5.	How often should I review the Optimization Insights?
+You can also sort columns in the insights results based on:
 
-We recommend that you review the insights on a regular basis since the new performance issues can be detected based on the application load and how the application is exercised by the users. Many users check which Optimization Insights are generated when they run their load tests.
+- Type (memory or CPU).
+- Maximum CPU or memory usage (impact).
+- Issue frequency within a specific time period (count).
+- Corresponding role, if your service has multiple roles (role).
 
-#### 6.	How do I go about prioritizing a particular recommendation provided by Optimization Insights relative to other recommendations as well as other tasks that developers need to work on?
+![Screenshot pointing out where you can filter the Optimization Insights](./extras/overview-images/opt-insights-1.png)
 
-We recommend that you prioritize issue remediation based on the values shown in the Count and Impact columns. 
+After sorting and filtering the Optimization Insights results, you can then select each insight to view:
 
-#### 7.	Will I incur any additional costs for testing Optimization Insights in the private preview?
+- Detailed description of the performance bug insight.
+- The full call stack.
+- Recommendations on how to fix the performance issue.
 
-Optimization Insights are included at no additional costs for App Insights Profiler customers. However, although minor, there are indirect costs associated with running the App Insights Profiler. First, the Profiler’s metadata is sent to your App Insights resource, which Application Insights charges for. In the basic pricing plan, your application can send a certain allowance of data each month free of charge. Second, the Profiler uploads profiles to the same region where your Application Insights was created. Therefore, if your application is running in a different region than that of your App Insights resource, we have to send profiler data across different regions. As a result, although very small, you will incur networking costs. 
+![Screenshot showing the description and recommendations associated with one of the insights](./extras/overview-images/opt-insights-2.png)
 
-#### 8. Will Optimization Insights continue to be free once it becomes generally available?
-We will provide more information on this topic once the product becomes generally available in 2022.
+Select the **Call Stack** button within the insight's details pane to access the full call stack surrounding the performance issue.
 
-#### 9. What does the roadmap for Optimization Insights look like?
-The roadmap for Optimization Insights is not currently public. However, we are continuously working on making the product better and would love to hear your feedback! If you have any suggestions or questions, please send us an email at **opt_insights@microsoft.com**.
+![Screenshot showing where you can select "Call Stack"](./extras/overview-images/opt-insights-3.png)
 
-#### 10. How long does it take for the Optimization Insights to appear in the UI after the profiler data is collected? 
-The Optimization Insights are shown in near real time as the profiler data is ingested and analyzed.
+The call stack results should look like:
 
-## Trademarks
+![Screenshot showing the Call Stack results](./extras/overview-images/opt-insights-4.png)
 
-This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft 
-trademarks or logos is subject to and must follow 
-**[Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/usage/general)**.
-Use of Microsoft trademarks or logos in modified versions of this project must not cause confusion or imply Microsoft sponsorship.
-Any use of third-party trademarks or logos are subject to those third-party's policies.
+## Next Steps
+
+- For more information regarding common questions, review our [FAQ page](faq.md).
+- If you have any further questions, email the [Optimization Insights team](mailto:opt_insights@microsoft.com).
+- Leave feedback for the Optimization Insights team via the [GitHub issues section of this repo](https://github.com/microsoft/optimization-insights/issues).
