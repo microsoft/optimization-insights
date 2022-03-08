@@ -7,7 +7,9 @@ Azure's AI-based service, Optimization Insights, helps you identify and remove C
 - Analyzing the runtime behavior of your application.
 - Comparing the behavior to performance engineering best practices, based on lessons learned from thousands of applications profiled internally at Microsoft.
 
-Optimization Insights service is built entirely using Azure. Behind the scenes, our system's smart-sampling agent grabs samples from the profiles captured on your app every *X* minutes. These samples are then sent to the AI model to extract the most relevant insights and recommendations.  
+Optimization Insights service is built entirely using Azure. Behind the scenes, our system's smart-sampling agent grabs samples from the profiles captured on your app every *X* minutes. These samples are then sent to the AI model to extract the most relevant insights and recommendations.
+
+[![Survey](extras/readme-images/signupbutton.jpg)](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR2WKm-0-TPBEtsyQ96QsOPpUMlRKVU5JSkJVRTVKOFJaQTI2N1ZRTkc4Si4u)  
 
 ## Prerequisites
 
