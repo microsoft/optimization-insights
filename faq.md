@@ -35,6 +35,28 @@ Optimization Insights draws from Application Insights, requiring you to have you
 - Connects data with the methods and functions in your application code.
 - Narrows down on the culprit for bottle-necking within the code.
 
+### How should I read the estimated Memory and CPU percentages?
+
+The estimated CPU and Memory are determined based on:
+
+- The amount of activity in your app
+- Similar usages seen in internal Microsoft apps used for training
+
+In addition to the Memory and CPU percentages, we also include:
+
+- The actual allocation sizes (in bytes)
+- A breakdown of the allocated types made within the call
+
+#### Memory
+
+For Memory, the number is just a percentage of all allocations made within the trace. For example, if an issue takes 24%, that means you spent 24% of all your allocations within that call. 
+
+#### CPU
+
+For CPU, the percentage is based on the number of CPUs in your machine (4 core, 8 core, etc.) and the trace time. For example, if your trace is 10 seconds long and you have 4 CPUs, you have a total of 40 seconds of CPU time. If the insight says the line of code is using 5% of the CPU, that means it’s using 5% of 40 seconds, which is 2 seconds.
+
+We’ve developed a model by analyzing internal Microsoft code to learn how much CPU time each line of code should be using. We generate insights when your code takes more CPU time than we think it should.
+
 ### Does enabling Optimization Insights result in additional overhead?
 
 Since Optimization Insights works entirely offline using the profiles uploaded by the App Insights Profiler, there's no extra overhead.
