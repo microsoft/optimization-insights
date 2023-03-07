@@ -1,5 +1,3 @@
-**MICROSOFT CONFIDENTIAL: All content in this repo is confidential unless otherwise stated.**
-
 # Optimization Insights Service (Private Preview)
 
 Azure's AI-based service, Optimization Insights, helps you identify and remove CPU and Memory bottlenecks by:
